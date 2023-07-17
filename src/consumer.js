@@ -17,7 +17,6 @@ const init = async () => {
   await channel.assertQueue('export:playlist', {
     durable: true
   })
-  console.log('consumed')
   channel.consume('export:playlist', listener.listen, { noAck: true })
 }
 
